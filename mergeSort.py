@@ -6,6 +6,12 @@ import time
 
 def merge_sort(array, drawArray, speed):
     mergeSortHelper(array, 0, len(array)-1, drawArray, speed)
+
+    # finished sorting
+    for i in range(len(array)):
+        colourArray = ['blue' if x == i else 'turquoise' for x in range(len(array))]
+        drawArray(array, colourArray)
+        time.sleep(speed/2)
     drawArray(array, ['turquoise']*len(array))
     return array
 

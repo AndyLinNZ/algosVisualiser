@@ -9,13 +9,13 @@ def insertion_sort(array, drawArray, speed):
             j -= 1
 
             # colour the array, green = being swapped, red = being checked against
-            colourArray = ['red' if x == j else ('green' if x <= j+1 else 'turquoise') for x in range(len(array))]
+            colourArray = ['red' if x == j else ('green' if x == i else 'turquoise') for x in range(len(array))]
             drawArray(array, colourArray)
             time.sleep(speed)
 
-    # insertion sort finished, so do a final green array animation        
+    # insertion sort finished, so do a final pink array animation        
     for i in range(len(array)):
-        colourArray = ['green' if x == i else 'turquoise' for x in range(len(array))]
+        colourArray = ['blue' if x == i else 'turquoise' for x in range(len(array))]
         drawArray(array, colourArray)
         time.sleep(speed/2)
 

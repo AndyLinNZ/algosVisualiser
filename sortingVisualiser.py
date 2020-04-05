@@ -5,6 +5,8 @@ from tkinter import *
 from tkinter import ttk
 from insertionSort import insertion_sort
 from mergeSort import merge_sort
+from bubbleSort import bubble_sort
+from quickSort import quick_sort
 import random
 
 # variables
@@ -72,6 +74,10 @@ def startAlgorithm():
         insertion_sort(array, drawArray, speed)
     if algoMenu.get() == "Mergesort":
         merge_sort(array, drawArray, speed)
+    if algoMenu.get() == "Bubblesort":
+        bubble_sort(array, drawArray, speed)
+    if algoMenu.get() == "Quicksort":
+        quick_sort(array, drawArray, speed)
 
 # Frame/ Where our functionalies are
 UI_frame = Frame(window, width = MAXWIDTH, height = 200, bg = "blue")
