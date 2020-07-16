@@ -7,4 +7,7 @@ Graphical user interface for visualising sorting algorithms. Currently the algor
 3. Quicksort
 4. Bubblesort
 
-(Radixsort, heapsort to be implemented soon)
+## How to use:
+1) Install python
+2) Open an IDE
+3) Run the program on the IDE or in the source folder enter in the terminal: `py sortingVisualiser.py`
