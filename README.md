@@ -6,6 +6,7 @@ Graphical user interface for visualising sorting algorithms. Currently the algor
 2. Insertionsort
 3. Quicksort
 4. Bubblesort
+5. Heapsort
 
 ## How to use:
 1) Install python
