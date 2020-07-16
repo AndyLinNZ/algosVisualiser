@@ -1,22 +1,22 @@
 # Sorting Algorithms Visualiser
-# Andy Lin 28/03/2020
+# Andy Lin 28/04/2020
 
-from tkinter import *
-from tkinter import ttk
 from insertionSort import insertion_sort
 from mergeSort import merge_sort
 from bubbleSort import bubble_sort
 from quickSort import quick_sort
+from heapSort import heap_sort
+from tkinter import *
+from tkinter import ttk
 import random
 
 # variables
-algorithms = ['Mergesort', 'Quicksort', 'Bubblesort', 'Insertionsort']
+algorithms = ['Mergesort', 'Quicksort', 'Bubblesort', 'Insertionsort', 'Heapsort']
 MAXWIDTH = 900
 MAXHEIGHT = 700
 MAXNUM = 400
 MINNUM = 1
 array = []
-
 
 # starting window
 window = Tk()
@@ -49,10 +49,9 @@ def drawArray(data, colourArray):
 def generate():
     """ Generates a new array based on user inputs """
     global array
-    print("You've selected: " + selected_alg.get())
     sizeNum = sizeEntry.get()
 
-    # create array
+    # create array of random integers from MINNUM to MAXNUM
     array = []
     for _ in range(sizeNum):
         x = random.randint(MINNUM, MAXNUM)
@@ -78,6 +77,8 @@ def startAlgorithm():
         bubble_sort(array, drawArray, speed)
     if algoMenu.get() == "Quicksort":
         quick_sort(array, drawArray, speed)
+    if algoMenu.get() == "Heapsort":
+        heap_sort(array, drawArray, speed)
 
 # Frame/ Where our functionalies are
 UI_frame = Frame(window, width = MAXWIDTH, height = 200, bg = "blue")
@@ -88,6 +89,7 @@ canvas = Canvas(window, width = MAXWIDTH, height = 480, bg = "white")
 canvas.grid(row=1, column=0, pady=5)
 
 # User Interface Area
+
 # first row of functions
 label = Label(UI_frame, text = "Algorithms", bg = "grey")
 label.grid(row=0, column=0, padx=5, pady=5)
@@ -101,9 +103,8 @@ generateButton.grid(row=0, column=2, padx=5, pady=5)
 
 startButton = Button(UI_frame, text = 'Start', command = startAlgorithm, bg = "grey", font = ("Helvetica", 9, "bold italic"))
 startButton.grid(row=0, column=4, padx=5, pady=5)
+
 # second row of functions
-sizelabel = Label(UI_frame, text="       Size:      ", bg="grey")
-sizelabel.grid(row=1, column=0, padx=5, pady=5)
 sizeEntry = Scale(UI_frame, from_ =1, to=200, length = 200, digits=3, resolution = 0.1, orient= HORIZONTAL, label= "Array Size and Speed:")
 sizeEntry.grid(row=1, column=1, padx=200, pady=5)
 sizeEntry.set(100)

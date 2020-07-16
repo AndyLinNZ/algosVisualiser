@@ -11,7 +11,7 @@ def quick_sort(array, drawArray, speed):
     for i in range(len(array)):
         colourArray = ['blue' if x == i else 'turquoise' for x in range(len(array))]
         drawArray(array, colourArray)
-        time.sleep(speed/2)
+        time.sleep(0)
 
     # final array to be turquoise
     drawArray(array, ['turquoise']*len(array))
