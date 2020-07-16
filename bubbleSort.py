@@ -14,7 +14,7 @@ def bubble_sort(array, drawArray, speed):
                 # colour the array, green = being swapped, red = being checked against
                 colourArray = ['red' if x == i else ('turquoise' if x <= lastUnsorted else 'green') for x in range(len(array))]
                 drawArray(array, colourArray)
-                time.sleep(speed)
+                # time.sleep(speed)
         
         lastUnsorted -= 1
     
@@ -22,7 +22,7 @@ def bubble_sort(array, drawArray, speed):
     for i in range(len(array)):
         colourArray = ['blue' if x == i else ('turquoise' if x < i else 'green') for x in range(len(array))]
         drawArray(array, colourArray)
-        time.sleep(speed/2)
+        # time.sleep(speed/2)
     # colour the array in turquoise
     drawArray(array, ['turquoise']*len(array))
 

@@ -11,7 +11,6 @@ def quick_sort(array, drawArray, speed):
     for i in range(len(array)):
         colourArray = ['blue' if x == i else 'turquoise' for x in range(len(array))]
         drawArray(array, colourArray)
-        time.sleep(0)
 
     # final array to be turquoise
     drawArray(array, ['turquoise']*len(array))
@@ -29,7 +28,7 @@ def partition(array, left, right, drawArray, speed):
     pIndex = left
     for i in range(left, right):
         drawArray(array, getColourArray(array, pIndex, i, pivot))
-        time.sleep(speed)
+        # time.sleep(speed)
         if array[i] <= pivot:
             array[pIndex], array[i] = array[i], array[pIndex]
             pIndex += 1

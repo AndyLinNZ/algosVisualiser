@@ -27,7 +27,7 @@ def max_heapify(array, drawArray, speed, n, i):
                 largerChild += 1
 
         colourArray = ['green' if x == i else ('red' if x == largerChild else 'turquoise') for x in range(len(array))]
-        time.sleep(speed)
+        # time.sleep(speed)
         drawArray(array, colourArray)
 
         if value >= array[largerChild]:

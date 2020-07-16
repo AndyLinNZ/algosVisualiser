@@ -11,7 +11,7 @@ def merge_sort(array, drawArray, speed):
     for i in range(len(array)):
         colourArray = ['blue' if x == i else 'turquoise' for x in range(len(array))]
         drawArray(array, colourArray)
-        time.sleep(0)
+
     drawArray(array, ['turquoise']*len(array))
     return array
 
@@ -45,11 +45,11 @@ def merge(array, startIdx, mid, endIdx, drawArray, speed):
             array[k] = rightArray[j]
             j += 1 
         drawArray(array, compareColour(array, k))
-        time.sleep(speed)
+        #time.sleep(speed)
         
             
     drawArray(array, ['green' if x>= startIdx and x <= endIdx else 'turquoise' for x in range(len(array))])
-    time.sleep(speed)
+    #time.sleep(speed)
 
 
 def compareColour(array, k):
