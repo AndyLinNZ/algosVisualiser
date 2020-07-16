@@ -1,5 +1,5 @@
 import time
-# heapsort algorithms
+# heapsort algorithm
 
 def build_heap(array, drawArray, speed):
     n = len(array)
