@@ -10,4 +10,4 @@ Graphical user interface for visualising sorting algorithms. Currently the algor
 
 ## How to use:
 1) Clone it/Download the zip
-2) Run the executable "sortingVisualiser"
+2) Run the executable "main"
