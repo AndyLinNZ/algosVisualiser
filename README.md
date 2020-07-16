@@ -9,4 +9,5 @@ Graphical user interface for visualising sorting algorithms. Currently the algor
 5. Heapsort
 
 ## How to use:
-Run the executable "sortingVisualiser"
+1) Clone it/Download the zip
+2) Run the executable "sortingVisualiser"
