@@ -80,33 +80,35 @@ def startAlgorithm():
     if algoMenu.get() == "Heapsort":
         heap_sort(array, drawArray, speed)
 
-# Frame/ Where our functionalies are
-UI_frame = Frame(window, width = MAXWIDTH, height = 200, bg = "blue")
-UI_frame.grid(row=0, column=0, padx=10, pady=5)
+if __name__ == "main":
 
-# Canvas/Where our algorithm is displayed
-canvas = Canvas(window, width = MAXWIDTH, height = 480, bg = "white")
-canvas.grid(row=1, column=0, pady=5)
+    # Frame/ Where our functionalies are
+    UI_frame = Frame(window, width = MAXWIDTH, height = 200, bg = "blue")
+    UI_frame.grid(row=0, column=0, padx=10, pady=5)
 
-# User Interface Area
+    # Canvas/Where our algorithm is displayed
+    canvas = Canvas(window, width = MAXWIDTH, height = 480, bg = "white")
+    canvas.grid(row=1, column=0, pady=5)
 
-# first row of functions
-label = Label(UI_frame, text = "Algorithms", bg = "grey")
-label.grid(row=0, column=0, padx=5, pady=5)
+    # User Interface Area
 
-algoMenu = ttk.Combobox(UI_frame, textvariable = selected_alg, values = algorithms)
-algoMenu.current(0)
-algoMenu.grid(row=0, column=1, padx=5, pady=5)
+    # first row of functions
+    label = Label(UI_frame, text = "Algorithms", bg = "grey")
+    label.grid(row=0, column=0, padx=5, pady=5)
 
-generateButton = Button(UI_frame, text = 'Generate', command = generate, bg = "grey", font = ("Helvetica", 9, "bold italic"))
-generateButton.grid(row=0, column=2, padx=5, pady=5)
+    algoMenu = ttk.Combobox(UI_frame, textvariable = selected_alg, values = algorithms)
+    algoMenu.current(0)
+    algoMenu.grid(row=0, column=1, padx=5, pady=5)
 
-startButton = Button(UI_frame, text = 'Start', command = startAlgorithm, bg = "grey", font = ("Helvetica", 9, "bold italic"))
-startButton.grid(row=0, column=4, padx=5, pady=5)
+    generateButton = Button(UI_frame, text = 'Generate', command = generate, bg = "grey", font = ("Helvetica", 9, "bold italic"))
+    generateButton.grid(row=0, column=2, padx=5, pady=5)
 
-# second row of functions
-sizeEntry = Scale(UI_frame, from_ =1, to=200, length = 200, digits=3, resolution = 0.1, orient= HORIZONTAL, label= "Array Size and Speed:")
-sizeEntry.grid(row=1, column=1, padx=200, pady=5)
-sizeEntry.set(100)
+    startButton = Button(UI_frame, text = 'Start', command = startAlgorithm, bg = "grey", font = ("Helvetica", 9, "bold italic"))
+    startButton.grid(row=0, column=4, padx=5, pady=5)
 
-window.mainloop()
+    # second row of functions
+    sizeEntry = Scale(UI_frame, from_ =1, to=200, length = 200, digits=3, resolution = 0.1, orient= HORIZONTAL, label= "Array Size and Speed:")
+    sizeEntry.grid(row=1, column=1, padx=200, pady=5)
+    sizeEntry.set(100)
+
+    window.mainloop()
